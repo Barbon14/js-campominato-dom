@@ -1,0 +1,48 @@
+/* impostazioni generali */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/* impostazioni griglia */
+#grid {
+    background-color: black;
+    margin: 80px auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 750px;
+    height: 750px;
+}
+
+/* impostazioni quadrati */
+.square {
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.square.clicked-true {
+    background-color: white;
+}
+
+.size-lvl-1 {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.size-lvl-2 {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.size-lvl-3 {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
