@@ -53,6 +53,7 @@ while (bombs.length < 16) {
 
 console.log(bombs);
 
+let points = 0;
 
 // funzioni
 
@@ -71,19 +72,29 @@ function generateGrid(squareNum, squareSize) {
 
         let node = newElement("div", "square");
         node.classList.add(squareSize);
+        node.classList.add("clicked-false");
 
         // rendo ogni quadrato cliccabile
         node.addEventListener('click',
 
-            function () {
+            function () {                
                 this.classList.add("clicked-true");
-                node.innerHTML = i;
+                this.innerHTML = i;
+                if (bombs.includes(i) === true) {
+                    this.classList.add("bomb");
+                    alert(`Hai perso. Ha totalizzato ${points} punti.`);
+                } if (this.classList.contains("clicked-false")) {
+                    points++;
+                    this.classList.remove("clicked-false")
+                    console.log(points);
+                }
             }
         );
 
         squareCont.append(node);
     }
 }
+
 
 // genera numero casuale
 function ramdomNum(min, max) {

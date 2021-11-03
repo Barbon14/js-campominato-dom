@@ -32,6 +32,10 @@ body {
     background-color: white;
 }
 
+.square.bomb {
+    background-color: red;
+}
+
 .size-lvl-1 {
     width: calc(100% / 10);
     height: calc(100% / 10);
